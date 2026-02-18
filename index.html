@@ -351,6 +351,12 @@
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M24 40l12-14h-8V8h-8v18h-8l12 14z"/></svg></div>
     <span class="sign-label">Rückwärts</span>
   </button>
+  <button class="sign-btn traffic" onclick="doSpeak('Đèn giao thông', this)" style="background:#1a2040">
+    <div class="sign-circle" style="background:#222;border:2px solid #4ade80">
+      <svg viewBox="0 0 48 48" style="width:28px;height:28px"><circle cx="24" cy="12" r="5" fill="#ef4444"/><circle cx="24" cy="24" r="5" fill="#eab308"/><circle cx="24" cy="36" r="5" fill="#22c55e"/></svg>
+    </div>
+    <span class="sign-label">Ampel</span>
+  </button>
 </div>
 
 <!-- ===== SPEED & CONTROL ===== -->
@@ -364,10 +370,6 @@
     <div class="sign-circle"><svg viewBox="0 0 48 48"><rect x="14" y="14" width="20" height="20" rx="2" fill="currentColor"/></svg></div>
     <span class="sign-label">Bremsen</span>
   </button>
-  <button class="sign-btn go" onclick="doSpeak('Khởi hành', this)">
-    <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M18 12l18 12-18 12V12z"/></svg></div>
-    <span class="sign-label">Anfahren</span>
-  </button>
   <button class="sign-btn spd" onclick="doSpeak('Chậm lại', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M14 20h20M14 28h20" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/></svg></div>
     <span class="sign-label">Langsam</span>
@@ -375,6 +377,10 @@
   <button class="sign-btn spd" onclick="doSpeak('Nhanh hơn', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M12 30L24 16l12 14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 38L24 28l8 10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <span class="sign-label">Schneller</span>
+  </button>
+  <button class="sign-btn go" onclick="doSpeak('Khởi hành', this)">
+    <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M18 12l18 12-18 12V12z"/></svg></div>
+    <span class="sign-label">Anfahren</span>
   </button>
   <button class="sign-btn limit" onclick="doSpeak('Đi ba mươi', this)">
     <div class="sign-circle"><span>30</span></div>
@@ -393,12 +399,6 @@
 <!-- ===== TRAFFIC ===== -->
 <div class="section-label">Verkehr</div>
 <div class="act-grid">
-  <button class="sign-btn traffic" onclick="doSpeak('Đèn giao thông', this)">
-    <div class="sign-circle" style="background:#222;border:2px solid #4ade80">
-      <svg viewBox="0 0 48 48" style="width:28px;height:28px"><circle cx="24" cy="12" r="5" fill="#ef4444"/><circle cx="24" cy="24" r="5" fill="#eab308"/><circle cx="24" cy="36" r="5" fill="#22c55e"/></svg>
-    </div>
-    <span class="sign-label">Ampel</span>
-  </button>
   <button class="sign-btn traffic" onclick="doSpeak('Vòng xuyến', this)">
     <div class="sign-circle" style="background:var(--blue-sign)">
       <svg viewBox="0 0 48 48" style="width:28px;height:28px"><circle cx="24" cy="24" r="12" fill="none" stroke="white" stroke-width="3"/><path d="M24 12V6M21 7l3-1 3 1" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>

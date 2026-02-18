@@ -219,11 +219,12 @@
 
   .btn-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
   }
 
-  .btn-grid .wide { grid-column: span 2; }
+  .btn-grid .wide { grid-column: span 3; }
+  .btn-grid .span2 { grid-column: span 2; }
 
   .cmd-btn {
     position: relative;
@@ -231,8 +232,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px 8px 10px;
-    min-height: 78px;
+    padding: 10px 4px 8px;
+    min-height: 90px;
     border: none;
     border-radius: var(--radius);
     cursor: pointer;
@@ -253,48 +254,91 @@
   }
 
   .cmd-btn .icon {
-    font-size: 26px;
+    font-size: 38px;
     line-height: 1;
-    margin-bottom: 4px;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+    margin-bottom: 6px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
   }
 
   .cmd-btn .de {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 11px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     line-height: 1.1;
     text-align: center;
+    opacity: 0.9;
   }
 
   .cmd-btn .vi {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 500;
-    font-size: 11px;
-    margin-top: 2px;
-    opacity: 0.7;
+    font-size: 9px;
+    margin-top: 1px;
+    opacity: 0.55;
     text-align: center;
     line-height: 1.2;
   }
 
   /* Speed limit signs */
   .speed-sign {
-    width: 34px;
-    height: 34px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    border: 3px solid #e8364f;
+    border: 4px solid #e8364f;
     background: white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
-    font-size: 15px;
+    font-size: 20px;
     color: #111;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     line-height: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  /* SVG icon buttons */
+  .cmd-btn .svg-icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 6px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  }
+
+  /* Stop sign */
+  .stop-sign {
+    width: 44px;
+    height: 44px;
+    background: #e8364f;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    color: white;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(232,54,79,0.4);
+  }
+
+  /* Walking speed sign */
+  .walk-sign {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 4px solid #3b82f6;
+    background: #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   }
 
   /* Red */
@@ -364,12 +408,13 @@
     transform: scale(0.97);
   }
   .cmd-btn.warning:active::before, .cmd-btn.warning.speaking::before { border-color: #f9731660; }
-  .cmd-btn.warning .de { font-size: 22px; }
+  .cmd-btn.warning .icon { font-size: 44px; }
+  .cmd-btn.warning .de { font-size: 16px; }
 
   .cmd-btn.success {
     background: linear-gradient(180deg, #1a1530 0%, #151028 100%);
     color: var(--purple);
-    min-height: 80px;
+    min-height: 100px;
   }
   .cmd-btn.success::before { border-color: #a855f730; }
   .cmd-btn.success:active, .cmd-btn.success.speaking {
@@ -378,7 +423,8 @@
     transform: scale(0.97);
   }
   .cmd-btn.success:active::before, .cmd-btn.success.speaking::before { border-color: #a855f760; }
-  .cmd-btn.success .de { font-size: 22px; }
+  .cmd-btn.success .icon { font-size: 44px; }
+  .cmd-btn.success .de { font-size: 16px; }
 
   /* Ripple */
   .ripple {
@@ -480,19 +526,24 @@
   </div>
   <div class="btn-grid">
     <button class="cmd-btn red" onclick="speak('Rẽ trái', this)">
-      <span class="icon">⬅️</span><span class="de">Links</span><span class="vi">Rẽ trái</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><path d="M30 12L16 24l14 12V28h8V20h-8V12z" fill="currentColor"/></svg>
+      <span class="de">Links</span><span class="vi">Rẽ trái</span>
+    </button>
+    <button class="cmd-btn red" onclick="speak('Đi thẳng', this)">
+      <svg class="svg-icon" viewBox="0 0 48 48"><path d="M24 8l-12 14h8v18h8V22h8L24 8z" fill="currentColor"/></svg>
+      <span class="de">Geradeaus</span><span class="vi">Đi thẳng</span>
     </button>
     <button class="cmd-btn red" onclick="speak('Rẽ phải', this)">
-      <span class="icon">➡️</span><span class="de">Rechts</span><span class="vi">Rẽ phải</span>
-    </button>
-    <button class="cmd-btn red wide" onclick="speak('Đi thẳng', this)">
-      <span class="icon">⬆️</span><span class="de">Geradeaus</span><span class="vi">Đi thẳng</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><path d="M18 12l14 12-14 12V28h-8V20h8V12z" fill="currentColor"/></svg>
+      <span class="de">Rechts</span><span class="vi">Rẽ phải</span>
     </button>
     <button class="cmd-btn red" onclick="speak('Quay đầu xe', this)">
-      <span class="icon">↩️</span><span class="de">Wenden</span><span class="vi">Quay đầu xe</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><path d="M24 8C15.2 8 8 15.2 8 24h6c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10v6c8.8 0 16-7.2 16-16S32.8 8 24 8z" fill="currentColor"/><path d="M8 24l6-6 6 6H8z" fill="currentColor"/></svg>
+      <span class="de">Wenden</span><span class="vi">Quay đầu xe</span>
     </button>
     <button class="cmd-btn red" onclick="speak('Lùi lại', this)">
-      <span class="icon">⬇️</span><span class="de">Rückwärts</span><span class="vi">Lùi lại</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><path d="M24 40l12-14h-8V8h-8v18h-8l12 14z" fill="currentColor"/></svg>
+      <span class="de">Rückwärts</span><span class="vi">Lùi lại</span>
     </button>
   </div>
 </div>
@@ -506,28 +557,36 @@
   </div>
   <div class="btn-grid">
     <button class="cmd-btn amber" onclick="speak('Dừng lại', this)">
-      <span class="icon">🛑</span><span class="de">Stop</span><span class="vi">Dừng lại</span>
+      <div class="stop-sign">STOP</div>
+      <span class="de">Stop</span><span class="vi">Dừng lại</span>
     </button>
     <button class="cmd-btn amber" onclick="speak('Đạp phanh', this)">
-      <span class="icon">✋</span><span class="de">Bremsen</span><span class="vi">Đạp phanh</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="3"/><rect x="14" y="14" width="20" height="20" rx="3" fill="currentColor" opacity="0.8"/></svg>
+      <span class="de">Bremsen</span><span class="vi">Đạp phanh</span>
+    </button>
+    <button class="cmd-btn amber" onclick="speak('Khởi hành', this)">
+      <svg class="svg-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="3"/><path d="M18 14l18 10-18 10V14z" fill="currentColor" opacity="0.8"/></svg>
+      <span class="de">Anfahren</span><span class="vi">Khởi hành</span>
     </button>
     <button class="cmd-btn amber" onclick="speak('Chậm lại', this)">
-      <span class="icon">🐢</span><span class="de">Langsam</span><span class="vi">Chậm lại</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><path d="M8 28h32v-3L24 10 8 25v3z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M16 28v-6h4v6M28 28v-6h4v6" fill="currentColor" opacity="0.6"/><rect x="8" y="28" width="32" height="3" rx="1" fill="currentColor" opacity="0.4"/></svg>
+      <span class="de">Langsam</span><span class="vi">Chậm lại</span>
     </button>
     <button class="cmd-btn amber" onclick="speak('Nhanh hơn', this)">
-      <span class="icon">🐇</span><span class="de">Schneller</span><span class="vi">Nhanh hơn</span>
-    </button>
-    <button class="cmd-btn amber wide" onclick="speak('Khởi hành', this)">
-      <span class="icon">🟢</span><span class="de">Anfahren</span><span class="vi">Khởi hành</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><path d="M10 30 L24 14 L38 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M14 36 L24 24 L34 36" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      <span class="de">Schneller</span><span class="vi">Nhanh hơn</span>
     </button>
     <button class="cmd-btn amber" onclick="speak('Đi ba mươi', this)">
-      <div class="speed-sign">30</div><span class="de">30 Fahren</span><span class="vi">Đi ba mươi</span>
+      <div class="speed-sign">30</div>
+      <span class="de">Zone 30</span><span class="vi">Đi ba mươi</span>
     </button>
     <button class="cmd-btn amber" onclick="speak('Đi năm mươi', this)">
-      <div class="speed-sign">50</div><span class="de">50 Fahren</span><span class="vi">Đi năm mươi</span>
+      <div class="speed-sign">50</div>
+      <span class="de">Zone 50</span><span class="vi">Đi năm mươi</span>
     </button>
-    <button class="cmd-btn amber wide" onclick="speak('Đi tốc độ đi bộ', this)">
-      <span class="icon">🚶</span><span class="de">Schrittgeschwindigkeit</span><span class="vi">Đi tốc độ đi bộ</span>
+    <button class="cmd-btn amber" onclick="speak('Đi tốc độ đi bộ', this)">
+      <div class="walk-sign">🚶</div>
+      <span class="de">Schritt</span><span class="vi">Đi tốc độ đi bộ</span>
     </button>
   </div>
 </div>
@@ -541,16 +600,20 @@
   </div>
   <div class="btn-grid">
     <button class="cmd-btn green" onclick="speak('Đèn giao thông', this)">
-      <span class="icon">🚦</span><span class="de">Ampel</span><span class="vi">Đèn giao thông</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><rect x="16" y="4" width="16" height="40" rx="4" fill="#222" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="14" r="4" fill="#e8364f"/><circle cx="24" cy="24" r="4" fill="#e8a832"/><circle cx="24" cy="34" r="4" fill="#2ec47a"/></svg>
+      <span class="de">Ampel</span><span class="vi">Đèn giao thông</span>
     </button>
     <button class="cmd-btn green" onclick="speak('Vòng xuyến', this)">
-      <span class="icon">🔄</span><span class="de">Kreisverkehr</span><span class="vi">Vòng xuyến</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 10 L24 4 M20 5 L24 4 L28 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="5" fill="currentColor" opacity="0.3"/></svg>
+      <span class="de">Kreisverkehr</span><span class="vi">Vòng xuyến</span>
     </button>
-    <button class="cmd-btn green wide" onclick="speak('Chú ý quyền ưu tiên', this)">
-      <span class="icon">⚠️</span><span class="de">Vorfahrt beachten</span><span class="vi">Chú ý quyền ưu tiên</span>
+    <button class="cmd-btn green" onclick="speak('Chú ý quyền ưu tiên', this)">
+      <svg class="svg-icon" viewBox="0 0 48 48"><path d="M24 4L44 40H4L24 4z" fill="none" stroke="#e8a832" stroke-width="3" stroke-linejoin="round"/><text x="24" y="34" text-anchor="middle" fill="#e8a832" font-size="22" font-weight="bold">!</text></svg>
+      <span class="de">Vorfahrt</span><span class="vi">Chú ý quyền ưu tiên</span>
     </button>
-    <button class="cmd-btn green wide" onclick="speak('Vượt xe', this)">
-      <span class="icon">🚗💨</span><span class="de">Überholen</span><span class="vi">Vượt xe</span>
+    <button class="cmd-btn green" onclick="speak('Vượt xe', this)">
+      <svg class="svg-icon" viewBox="0 0 48 48"><rect x="14" y="22" width="22" height="10" rx="4" fill="currentColor" opacity="0.5"/><circle cx="20" cy="32" r="3" fill="currentColor"/><circle cx="30" cy="32" r="3" fill="currentColor"/><path d="M8 26h4M8 30h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/></svg>
+      <span class="de">Überholen</span><span class="vi">Vượt xe</span>
     </button>
   </div>
 </div>
@@ -564,25 +627,32 @@
   </div>
   <div class="btn-grid">
     <button class="cmd-btn blue" onclick="speak('Đỗ xe', this)">
-      <span class="icon">🅿️</span><span class="de">Parken</span><span class="vi">Đỗ xe</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="4" fill="#3b82f6"/><text x="24" y="33" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="'Barlow Condensed',sans-serif">P</text></svg>
+      <span class="de">Parken</span><span class="vi">Đỗ xe</span>
     </button>
     <button class="cmd-btn blue" onclick="speak('Đỗ xe vào chỗ', this)">
-      <span class="icon">↘️🅿️</span><span class="de">Einparken</span><span class="vi">Đỗ xe vào chỗ</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="4" fill="#3b82f6"/><text x="24" y="30" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="'Barlow Condensed',sans-serif">P</text><path d="M18 36l6-6 6 6" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      <span class="de">Einparken</span><span class="vi">Đỗ xe vào chỗ</span>
     </button>
     <button class="cmd-btn blue" onclick="speak('Bật xi nhan trái', this)">
-      <span class="icon">◀️💡</span><span class="de">Blinker Links</span><span class="vi">Bật xi nhan trái</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><path d="M8 24l12-8v6h20v4H20v6L8 24z" fill="currentColor" opacity="0.4"/><path d="M8 24l12-8v6h20v4H20v6L8 24z" fill="#4ade80" opacity="0.9"><animate attributeName="opacity" values="0.9;0.2;0.9" dur="1s" repeatCount="indefinite"/></path></svg>
+      <span class="de">Blinker L</span><span class="vi">Bật xi nhan trái</span>
     </button>
     <button class="cmd-btn blue" onclick="speak('Bật xi nhan phải', this)">
-      <span class="icon">💡▶️</span><span class="de">Blinker Rechts</span><span class="vi">Bật xi nhan phải</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><path d="M40 24l-12-8v6H8v4h20v6l12-8z" fill="currentColor" opacity="0.4"/><path d="M40 24l-12-8v6H8v4h20v6l12-8z" fill="#4ade80" opacity="0.9"><animate attributeName="opacity" values="0.9;0.2;0.9" dur="1s" repeatCount="indefinite"/></path></svg>
+      <span class="de">Blinker R</span><span class="vi">Bật xi nhan phải</span>
     </button>
     <button class="cmd-btn blue" onclick="speak('Nhìn qua vai', this)">
-      <span class="icon">👀</span><span class="de">Schulterblick</span><span class="vi">Nhìn qua vai</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><circle cx="24" cy="14" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M10 40c0-8 6-14 14-14s14 6 14 14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M30 12l6-4M30 16l8 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/></svg>
+      <span class="de">Schulterblick</span><span class="vi">Nhìn qua vai</span>
     </button>
     <button class="cmd-btn blue" onclick="speak('Nhìn gương', this)">
-      <span class="icon">🪞</span><span class="de">Spiegel</span><span class="vi">Nhìn gương</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><ellipse cx="24" cy="22" rx="14" ry="16" fill="none" stroke="currentColor" stroke-width="2.5"/><ellipse cx="24" cy="22" rx="10" ry="12" fill="currentColor" opacity="0.15"/><line x1="24" y1="38" x2="24" y2="44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="18" y1="44" x2="30" y2="44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      <span class="de">Spiegel</span><span class="vi">Nhìn gương</span>
     </button>
     <button class="cmd-btn blue wide" onclick="speak('Thắt dây an toàn', this)">
-      <span class="icon">🔒</span><span class="de">Anschnallen</span><span class="vi">Thắt dây an toàn</span>
+      <svg class="svg-icon" viewBox="0 0 48 48"><circle cx="24" cy="14" r="6" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M14 44l10-20 10 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 32h24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><rect x="21" y="28" width="6" height="6" rx="1" fill="currentColor" stroke="currentColor" stroke-width="1"/></svg>
+      <span class="de">Anschnallen</span><span class="vi">Thắt dây an toàn</span>
     </button>
   </div>
 </div>
@@ -590,10 +660,12 @@
 <!-- Spezial -->
 <div class="special-grid">
   <button class="cmd-btn warning" onclick="speak('Chú ý!', this)">
-    <span class="icon" style="font-size:32px">🚨</span><span class="de">Achtung!</span><span class="vi">Chú ý!</span>
+    <svg class="svg-icon" style="width:50px;height:50px" viewBox="0 0 48 48"><path d="M24 4L44 40H4L24 4z" fill="#f97316" stroke="#f97316" stroke-width="2" stroke-linejoin="round"/><text x="24" y="34" text-anchor="middle" fill="white" font-size="22" font-weight="bold">!</text></svg>
+    <span class="de">Achtung!</span><span class="vi">Chú ý!</span>
   </button>
   <button class="cmd-btn success" onclick="speak('Làm tốt lắm!', this)">
-    <span class="icon" style="font-size:32px">👍</span><span class="de">Gut gemacht!</span><span class="vi">Làm tốt lắm!</span>
+    <span class="icon">👍</span>
+    <span class="de">Gut gemacht!</span><span class="vi">Làm tốt lắm!</span>
   </button>
 </div>
 

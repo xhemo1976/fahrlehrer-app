@@ -6,6 +6,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#111118">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Fahrlehrer → Tiếng Việt</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap');
@@ -65,13 +68,21 @@
 
   /* ===== COMBO BAR - "WO?" location context ===== */
   .combo-bar {
-    display: flex; gap: 6px; padding: 8px 0; overflow-x: auto;
+    display: flex; gap: 6px; padding: 8px 30px 8px 0; overflow-x: auto;
     scrollbar-width: none; -ms-overflow-style: none;
     opacity: 0; transform: translateY(10px);
     animation: fadeUp 0.3s ease 0.05s forwards; animation-play-state: paused;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
   }
   body.started .combo-bar { animation-play-state: running; }
   .combo-bar::-webkit-scrollbar { display: none; }
+  .combo-bar::after {
+    content: ''; position: sticky; right: 0; top: 0; flex-shrink: 0;
+    width: 30px; margin-left: -30px;
+    background: linear-gradient(90deg, transparent, var(--bg));
+    pointer-events: none;
+  }
 
   .combo-bar .label {
     font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px;

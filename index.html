@@ -231,8 +231,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 14px 8px 12px;
-    min-height: 72px;
+    padding: 10px 8px 10px;
+    min-height: 78px;
     border: none;
     border-radius: var(--radius);
     cursor: pointer;
@@ -252,10 +252,17 @@
     transition: border-color 0.15s ease;
   }
 
+  .cmd-btn .icon {
+    font-size: 26px;
+    line-height: 1;
+    margin-bottom: 4px;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+  }
+
   .cmd-btn .de {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     line-height: 1.1;
@@ -265,11 +272,29 @@
   .cmd-btn .vi {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 500;
-    font-size: 12px;
-    margin-top: 4px;
+    font-size: 11px;
+    margin-top: 2px;
     opacity: 0.7;
     text-align: center;
     line-height: 1.2;
+  }
+
+  /* Speed limit signs */
+  .speed-sign {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 3px solid #e8364f;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    color: #111;
+    margin-bottom: 4px;
+    line-height: 1;
   }
 
   /* Red */
@@ -455,19 +480,19 @@
   </div>
   <div class="btn-grid">
     <button class="cmd-btn red" onclick="speak('Rẽ trái', this)">
-      <span class="de">Links</span><span class="vi">Rẽ trái</span>
+      <span class="icon">⬅️</span><span class="de">Links</span><span class="vi">Rẽ trái</span>
     </button>
     <button class="cmd-btn red" onclick="speak('Rẽ phải', this)">
-      <span class="de">Rechts</span><span class="vi">Rẽ phải</span>
+      <span class="icon">➡️</span><span class="de">Rechts</span><span class="vi">Rẽ phải</span>
     </button>
     <button class="cmd-btn red wide" onclick="speak('Đi thẳng', this)">
-      <span class="de">Geradeaus</span><span class="vi">Đi thẳng</span>
+      <span class="icon">⬆️</span><span class="de">Geradeaus</span><span class="vi">Đi thẳng</span>
     </button>
     <button class="cmd-btn red" onclick="speak('Quay đầu xe', this)">
-      <span class="de">Wenden</span><span class="vi">Quay đầu xe</span>
+      <span class="icon">↩️</span><span class="de">Wenden</span><span class="vi">Quay đầu xe</span>
     </button>
     <button class="cmd-btn red" onclick="speak('Lùi lại', this)">
-      <span class="de">Rückwärts</span><span class="vi">Lùi lại</span>
+      <span class="icon">⬇️</span><span class="de">Rückwärts</span><span class="vi">Lùi lại</span>
     </button>
   </div>
 </div>
@@ -481,28 +506,28 @@
   </div>
   <div class="btn-grid">
     <button class="cmd-btn amber" onclick="speak('Dừng lại', this)">
-      <span class="de">Stop</span><span class="vi">Dừng lại</span>
+      <span class="icon">🛑</span><span class="de">Stop</span><span class="vi">Dừng lại</span>
     </button>
     <button class="cmd-btn amber" onclick="speak('Đạp phanh', this)">
-      <span class="de">Bremsen</span><span class="vi">Đạp phanh</span>
+      <span class="icon">✋</span><span class="de">Bremsen</span><span class="vi">Đạp phanh</span>
     </button>
     <button class="cmd-btn amber" onclick="speak('Chậm lại', this)">
-      <span class="de">Langsam</span><span class="vi">Chậm lại</span>
+      <span class="icon">🐢</span><span class="de">Langsam</span><span class="vi">Chậm lại</span>
     </button>
     <button class="cmd-btn amber" onclick="speak('Nhanh hơn', this)">
-      <span class="de">Schneller</span><span class="vi">Nhanh hơn</span>
+      <span class="icon">🐇</span><span class="de">Schneller</span><span class="vi">Nhanh hơn</span>
     </button>
     <button class="cmd-btn amber wide" onclick="speak('Khởi hành', this)">
-      <span class="de">Anfahren</span><span class="vi">Khởi hành</span>
+      <span class="icon">🟢</span><span class="de">Anfahren</span><span class="vi">Khởi hành</span>
     </button>
     <button class="cmd-btn amber" onclick="speak('Đi ba mươi', this)">
-      <span class="de">30 Fahren</span><span class="vi">Đi ba mươi</span>
+      <div class="speed-sign">30</div><span class="de">30 Fahren</span><span class="vi">Đi ba mươi</span>
     </button>
     <button class="cmd-btn amber" onclick="speak('Đi năm mươi', this)">
-      <span class="de">50 Fahren</span><span class="vi">Đi năm mươi</span>
+      <div class="speed-sign">50</div><span class="de">50 Fahren</span><span class="vi">Đi năm mươi</span>
     </button>
     <button class="cmd-btn amber wide" onclick="speak('Đi tốc độ đi bộ', this)">
-      <span class="de">Schrittgeschwindigkeit</span><span class="vi">Đi tốc độ đi bộ</span>
+      <span class="icon">🚶</span><span class="de">Schrittgeschwindigkeit</span><span class="vi">Đi tốc độ đi bộ</span>
     </button>
   </div>
 </div>
@@ -516,16 +541,16 @@
   </div>
   <div class="btn-grid">
     <button class="cmd-btn green" onclick="speak('Đèn giao thông', this)">
-      <span class="de">Ampel</span><span class="vi">Đèn giao thông</span>
+      <span class="icon">🚦</span><span class="de">Ampel</span><span class="vi">Đèn giao thông</span>
     </button>
     <button class="cmd-btn green" onclick="speak('Vòng xuyến', this)">
-      <span class="de">Kreisverkehr</span><span class="vi">Vòng xuyến</span>
+      <span class="icon">🔄</span><span class="de">Kreisverkehr</span><span class="vi">Vòng xuyến</span>
     </button>
     <button class="cmd-btn green wide" onclick="speak('Chú ý quyền ưu tiên', this)">
-      <span class="de">Vorfahrt beachten</span><span class="vi">Chú ý quyền ưu tiên</span>
+      <span class="icon">⚠️</span><span class="de">Vorfahrt beachten</span><span class="vi">Chú ý quyền ưu tiên</span>
     </button>
     <button class="cmd-btn green wide" onclick="speak('Vượt xe', this)">
-      <span class="de">Überholen</span><span class="vi">Vượt xe</span>
+      <span class="icon">🚗💨</span><span class="de">Überholen</span><span class="vi">Vượt xe</span>
     </button>
   </div>
 </div>
@@ -539,25 +564,25 @@
   </div>
   <div class="btn-grid">
     <button class="cmd-btn blue" onclick="speak('Đỗ xe', this)">
-      <span class="de">Parken</span><span class="vi">Đỗ xe</span>
+      <span class="icon">🅿️</span><span class="de">Parken</span><span class="vi">Đỗ xe</span>
     </button>
     <button class="cmd-btn blue" onclick="speak('Đỗ xe vào chỗ', this)">
-      <span class="de">Einparken</span><span class="vi">Đỗ xe vào chỗ</span>
+      <span class="icon">↘️🅿️</span><span class="de">Einparken</span><span class="vi">Đỗ xe vào chỗ</span>
     </button>
     <button class="cmd-btn blue" onclick="speak('Bật xi nhan trái', this)">
-      <span class="de">Blinker Links</span><span class="vi">Bật xi nhan trái</span>
+      <span class="icon">◀️💡</span><span class="de">Blinker Links</span><span class="vi">Bật xi nhan trái</span>
     </button>
     <button class="cmd-btn blue" onclick="speak('Bật xi nhan phải', this)">
-      <span class="de">Blinker Rechts</span><span class="vi">Bật xi nhan phải</span>
+      <span class="icon">💡▶️</span><span class="de">Blinker Rechts</span><span class="vi">Bật xi nhan phải</span>
     </button>
     <button class="cmd-btn blue" onclick="speak('Nhìn qua vai', this)">
-      <span class="de">Schulterblick</span><span class="vi">Nhìn qua vai</span>
+      <span class="icon">👀</span><span class="de">Schulterblick</span><span class="vi">Nhìn qua vai</span>
     </button>
     <button class="cmd-btn blue" onclick="speak('Nhìn gương', this)">
-      <span class="de">Spiegel</span><span class="vi">Nhìn gương</span>
+      <span class="icon">🪞</span><span class="de">Spiegel</span><span class="vi">Nhìn gương</span>
     </button>
     <button class="cmd-btn blue wide" onclick="speak('Thắt dây an toàn', this)">
-      <span class="de">Anschnallen</span><span class="vi">Thắt dây an toàn</span>
+      <span class="icon">🔒</span><span class="de">Anschnallen</span><span class="vi">Thắt dây an toàn</span>
     </button>
   </div>
 </div>
@@ -565,10 +590,10 @@
 <!-- Spezial -->
 <div class="special-grid">
   <button class="cmd-btn warning" onclick="speak('Chú ý!', this)">
-    <span class="de">⚠ Achtung!</span><span class="vi">Chú ý!</span>
+    <span class="icon" style="font-size:32px">🚨</span><span class="de">Achtung!</span><span class="vi">Chú ý!</span>
   </button>
   <button class="cmd-btn success" onclick="speak('Làm tốt lắm!', this)">
-    <span class="de">★ Gut gemacht!</span><span class="vi">Làm tốt lắm!</span>
+    <span class="icon" style="font-size:32px">👍</span><span class="de">Gut gemacht!</span><span class="vi">Làm tốt lắm!</span>
   </button>
 </div>
 

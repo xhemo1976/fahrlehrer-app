@@ -164,6 +164,12 @@
     line-height: 1; text-align: center;
   }
 
+  .sign-btn .sign-vi {
+    font-family: 'DM Sans', sans-serif; font-weight: 500;
+    font-size: 9px; opacity: 0.5; margin-top: 2px;
+    text-align: center; line-height: 1.1;
+  }
+
   /* Direction: blue circle with white arrow */
   .sign-btn.dir { background: #1a2040; color: #93b4f8; }
   .sign-btn.dir .sign-circle { background: var(--blue-sign); }
@@ -344,29 +350,29 @@
 <div class="dir-grid">
   <button class="sign-btn dir" onclick="doSpeak('Rẽ trái', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M30 12L16 24l14 12V28h8V20h-8V12z"/></svg></div>
-    <span class="sign-label">Links</span>
+    <span class="sign-label">Links</span><span class="sign-vi">Rẽ trái</span>
   </button>
   <button class="sign-btn dir" onclick="doSpeak('Đi thẳng', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M24 8l-12 14h8v18h8V22h8L24 8z"/></svg></div>
-    <span class="sign-label">Geradeaus</span>
+    <span class="sign-label">Geradeaus</span><span class="sign-vi">Đi thẳng</span>
   </button>
   <button class="sign-btn dir" onclick="doSpeak('Rẽ phải', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M18 12l14 12-14 12V28h-8V20h8V12z"/></svg></div>
-    <span class="sign-label">Rechts</span>
+    <span class="sign-label">Rechts</span><span class="sign-vi">Rẽ phải</span>
   </button>
   <button class="sign-btn dir" onclick="doSpeak('Quay đầu xe', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M24 10C16.3 10 10 16.3 10 24h5c0-5 4-9 9-9s9 4 9 9-4 9-9 9v5c7.7 0 14-6.3 14-14S31.7 10 24 10z"/><path d="M10 24l5-5 5 5H10z"/></svg></div>
-    <span class="sign-label">Wenden</span>
+    <span class="sign-label">Wenden</span><span class="sign-vi">Quay đầu xe</span>
   </button>
   <button class="sign-btn dir" onclick="doSpeak('Lùi lại', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M24 40l12-14h-8V8h-8v18h-8l12 14z"/></svg></div>
-    <span class="sign-label">Rückwärts</span>
+    <span class="sign-label">Rückwärts</span><span class="sign-vi">Lùi lại</span>
   </button>
   <button class="sign-btn traffic" onclick="doSpeak('Đèn giao thông', this)" style="background:#1a2040">
     <div class="sign-circle" style="background:#222;border:2px solid #4ade80">
       <svg viewBox="0 0 48 48" style="width:28px;height:28px"><circle cx="24" cy="12" r="5" fill="#ef4444"/><circle cx="24" cy="24" r="5" fill="#eab308"/><circle cx="24" cy="36" r="5" fill="#22c55e"/></svg>
     </div>
-    <span class="sign-label">Ampel</span>
+    <span class="sign-label">Ampel</span><span class="sign-vi">Đèn giao thông</span>
   </button>
 </div>
 
@@ -375,35 +381,35 @@
 <div class="ctrl-grid">
   <button class="sign-btn stop" onclick="doSpeak('Dừng lại', this)">
     <div class="sign-circle"><span>STOP</span></div>
-    <span class="sign-label">Stop</span>
+    <span class="sign-label">Stop</span><span class="sign-vi">Dừng lại</span>
   </button>
   <button class="sign-btn brake" onclick="doSpeak('Đạp phanh', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><rect x="14" y="14" width="20" height="20" rx="2" fill="currentColor"/></svg></div>
-    <span class="sign-label">Bremsen</span>
+    <span class="sign-label">Bremsen</span><span class="sign-vi">Đạp phanh</span>
   </button>
   <button class="sign-btn spd" onclick="doSpeak('Chậm lại', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M14 20h20M14 28h20" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/></svg></div>
-    <span class="sign-label">Langsam</span>
+    <span class="sign-label">Langsam</span><span class="sign-vi">Chậm lại</span>
   </button>
   <button class="sign-btn spd" onclick="doSpeak('Nhanh hơn', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M12 30L24 16l12 14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 38L24 28l8 10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <span class="sign-label">Schneller</span>
+    <span class="sign-label">Schneller</span><span class="sign-vi">Nhanh hơn</span>
   </button>
   <button class="sign-btn go" onclick="doSpeak('Khởi hành', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path d="M18 12l18 12-18 12V12z"/></svg></div>
-    <span class="sign-label">Anfahren</span>
+    <span class="sign-label">Anfahren</span><span class="sign-vi">Khởi hành</span>
   </button>
   <button class="sign-btn limit" onclick="doSpeak('Đi ba mươi', this)">
     <div class="sign-circle"><span>30</span></div>
-    <span class="sign-label">Zone 30</span>
+    <span class="sign-label">Zone 30</span><span class="sign-vi">Đi ba mươi</span>
   </button>
   <button class="sign-btn limit" onclick="doSpeak('Đi năm mươi', this)">
     <div class="sign-circle"><span>50</span></div>
-    <span class="sign-label">Zone 50</span>
+    <span class="sign-label">Zone 50</span><span class="sign-vi">Đi năm mươi</span>
   </button>
   <button class="sign-btn zone" onclick="doSpeak('Đi tốc độ đi bộ', this)">
     <div class="sign-circle" style="font-size:26px">🚶</div>
-    <span class="sign-label">Schritt</span>
+    <span class="sign-label">Schritt</span><span class="sign-vi">Đi tốc độ đi bộ</span>
   </button>
 </div>
 
@@ -414,19 +420,19 @@
     <div class="sign-circle" style="background:var(--blue-sign)">
       <svg viewBox="0 0 48 48" style="width:28px;height:28px"><circle cx="24" cy="24" r="12" fill="none" stroke="white" stroke-width="3"/><path d="M24 12V6M21 7l3-1 3 1" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
     </div>
-    <span class="sign-label">Kreisverkehr</span>
+    <span class="sign-label">Kreisverkehr</span><span class="sign-vi">Vòng xuyến</span>
   </button>
   <button class="sign-btn traffic" onclick="doSpeak('Chú ý quyền ưu tiên', this)">
     <div class="sign-circle" style="background:transparent">
       <svg viewBox="0 0 48 48" style="width:40px;height:40px"><path d="M24 4L44 40H4L24 4z" fill="none" stroke="#eab308" stroke-width="3" stroke-linejoin="round"/><text x="24" y="34" text-anchor="middle" fill="#eab308" font-size="20" font-weight="bold">!</text></svg>
     </div>
-    <span class="sign-label">Vorfahrt</span>
+    <span class="sign-label">Vorfahrt</span><span class="sign-vi">Chú ý quyền ưu tiên</span>
   </button>
   <button class="sign-btn traffic" onclick="doSpeak('Vượt xe', this)">
     <div class="sign-circle" style="background:var(--green-ok)">
       <svg viewBox="0 0 48 48" style="width:28px;height:28px"><rect x="6" y="20" width="18" height="8" rx="3" fill="white" opacity="0.6"/><rect x="24" y="14" width="18" height="8" rx="3" fill="white"/><path d="M36 22l6 0" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/></svg>
     </div>
-    <span class="sign-label">Überholen</span>
+    <span class="sign-label">Überholen</span><span class="sign-vi">Vượt xe</span>
   </button>
 </div>
 
@@ -435,31 +441,31 @@
 <div class="act-grid">
   <button class="sign-btn maneuver" onclick="doSpeak('Đỗ xe', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><text x="24" y="32" text-anchor="middle" fill="white" font-size="26" font-weight="bold" font-family="'Barlow Condensed',sans-serif">P</text></svg></div>
-    <span class="sign-label">Parken</span>
+    <span class="sign-label">Parken</span><span class="sign-vi">Đỗ xe</span>
   </button>
   <button class="sign-btn maneuver" onclick="doSpeak('Đỗ xe vào chỗ', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><text x="24" y="28" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="'Barlow Condensed',sans-serif">P</text><path d="M17 36l7-6 7 6" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
-    <span class="sign-label">Einparken</span>
+    <span class="sign-label">Einparken</span><span class="sign-vi">Đỗ xe vào chỗ</span>
   </button>
   <button class="sign-btn maneuver" onclick="doSpeak('Bật xi nhan trái', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path class="blink-arrow" d="M8 24l14-10v7h18v6H22v7L8 24z" fill="#4ade80"/></svg></div>
-    <span class="sign-label">Blinker L</span>
+    <span class="sign-label">Blinker L</span><span class="sign-vi">Bật xi nhan trái</span>
   </button>
   <button class="sign-btn maneuver" onclick="doSpeak('Bật xi nhan phải', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><path class="blink-arrow" d="M40 24L26 14v7H8v6h18v7l14-10z" fill="#4ade80"/></svg></div>
-    <span class="sign-label">Blinker R</span>
+    <span class="sign-label">Blinker R</span><span class="sign-vi">Bật xi nhan phải</span>
   </button>
   <button class="sign-btn maneuver" onclick="doSpeak('Nhìn qua vai', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><circle cx="22" cy="16" r="7" fill="none" stroke="white" stroke-width="2.5"/><path d="M10 40c0-7 5-12 12-12s12 5 12 12" fill="none" stroke="white" stroke-width="2.5"/><path d="M28 14l5-3M29 18l6 0" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.8"/></svg></div>
-    <span class="sign-label">Schulterblick</span>
+    <span class="sign-label">Schulterblick</span><span class="sign-vi">Nhìn qua vai</span>
   </button>
   <button class="sign-btn maneuver" onclick="doSpeak('Nhìn gương', this)">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><ellipse cx="24" cy="21" rx="12" ry="14" fill="none" stroke="white" stroke-width="2.5"/><ellipse cx="24" cy="21" rx="8" ry="10" fill="white" opacity="0.15"/><line x1="24" y1="35" x2="24" y2="42" stroke="white" stroke-width="3" stroke-linecap="round"/></svg></div>
-    <span class="sign-label">Spiegel</span>
+    <span class="sign-label">Spiegel</span><span class="sign-vi">Nhìn gương</span>
   </button>
   <button class="sign-btn maneuver" onclick="doSpeak('Thắt dây an toàn', this)" style="grid-column: span 3">
     <div class="sign-circle"><svg viewBox="0 0 48 48"><circle cx="24" cy="14" r="5" fill="none" stroke="white" stroke-width="2.5"/><path d="M15 42l9-18 9 18" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 32h22" stroke="white" stroke-width="2.5" stroke-linecap="round"/><rect x="21" y="28" width="6" height="6" rx="1" fill="white"/></svg></div>
-    <span class="sign-label">Anschnallen</span>
+    <span class="sign-label">Anschnallen</span><span class="sign-vi">Thắt dây an toàn</span>
   </button>
 </div>
 
@@ -469,13 +475,13 @@
     <div class="sign-circle" style="background:transparent">
       <svg viewBox="0 0 48 48" style="width:44px;height:44px"><path d="M24 4L44 40H4L24 4z" fill="var(--orange-warn)"/><text x="24" y="34" text-anchor="middle" fill="white" font-size="22" font-weight="bold">!</text></svg>
     </div>
-    <span class="sign-label" style="font-size:14px">Achtung!</span>
+    <span class="sign-label" style="font-size:14px">Achtung!</span><span class="sign-vi">Chú ý!</span>
   </button>
   <button class="sign-btn nice" onclick="doSpeak('Làm tốt lắm!', this)">
     <div class="sign-circle" style="background:var(--purple-nice)">
       <span style="font-size:28px">👍</span>
     </div>
-    <span class="sign-label" style="font-size:14px">Gut gemacht!</span>
+    <span class="sign-label" style="font-size:14px">Gut gemacht!</span><span class="sign-vi">Làm tốt lắm!</span>
   </button>
 </div>
 

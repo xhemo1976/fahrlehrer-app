@@ -6,9 +6,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#111118">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon-192.png">
 <title>Fahrlehrer → Tiếng Việt</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap');
@@ -669,6 +669,11 @@
     const btn = e.target.closest('.sign-btn') || e.target.closest('.loc-btn');
     if (btn) { e.preventDefault(); btn.click(); }
   }, { passive: false });
+
+  // PWA Service Worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(function() {});
+  }
 </script>
 </body>
 </html>

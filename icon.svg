@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#111118"/>
+  <!-- Steering wheel -->
+  <circle cx="256" cy="240" r="130" fill="none" stroke="#2563eb" stroke-width="18"/>
+  <circle cx="256" cy="240" r="35" fill="#2563eb"/>
+  <!-- Spokes -->
+  <line x1="256" y1="205" x2="256" y2="110" stroke="#2563eb" stroke-width="14" stroke-linecap="round"/>
+  <line x1="225" y1="258" x2="145" y2="305" stroke="#2563eb" stroke-width="14" stroke-linecap="round"/>
+  <line x1="287" y1="258" x2="367" y2="305" stroke="#2563eb" stroke-width="14" stroke-linecap="round"/>
+  <!-- Vietnamese flag hint - small star -->
+  <text x="256" y="440" text-anchor="middle" fill="#e8e8f0" font-family="sans-serif" font-weight="700" font-size="52">DE → VN</text>
+</svg>
